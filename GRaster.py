@@ -89,10 +89,6 @@ class Raster():
             if data is not None :
                 num_bands = data.RasterCount
                 if band is None :
-                    if num_bands > 1 :
-                        array = data.ReadAsArray()
-                        array = np.dstack(array)
-                    else :
                         array = data.ReadAsArray()
                 else :
                     b = data.GetRasterBand(band)
