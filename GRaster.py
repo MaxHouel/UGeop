@@ -200,7 +200,7 @@ class Raster():
         if dtype == 'Byte':
             outputType = gdal.GDT_Byte
         if len(im.shape) > 2 :
-            h, w, bands =  im.shape
+            bands, h, w =  im.shape
         else :
             h, w = im.shape
         for i in range(0,w, step):
