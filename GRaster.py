@@ -87,7 +87,6 @@ class Raster():
             """
             data = gdal.Open(path,gdal.GA_ReadOnly)
             if data is not None :
-                num_bands = data.RasterCount
                 if band is None :
                         array = data.ReadAsArray()
                 else :
@@ -366,7 +365,7 @@ class Raster():
         if bands > 1 :
             for band in range(1, bands + 1) :
                 outdata.GetRasterBand(band).SetNoDataValue(nodata_value)
-                outdata.GetRasterBand(band).WriteArray(nparray[:,:,band-1])
+                outdata.GetRasterBand(band).WriteArray(nparray[band-1,:,:])
         else :
                 outdata.GetRasterBand(bands).SetNoDataValue(nodata_value)
                 outdata.GetRasterBand(bands).WriteArray(nparray)
