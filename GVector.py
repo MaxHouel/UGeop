@@ -194,7 +194,7 @@ class Vector():
             inlayer = DS.GetLayer()
         else : 
             inlayer = input.GetLayer()
-        feature = inlayer[0]
+        feature = inlayer[1]
         geom = feature.GetGeometryRef()
         geoType = geom.GetGeometryName()
         if geoType == 'MULTIPOLYGON' :
